@@ -22,9 +22,9 @@ class AddContact extends React.Component {
       return;
     }
     this.props.addContactHandler(this.state);
-    localStorage.setItem("username", this.state.name);
+    localStorage.setItem("useremail", this.state.email);
     this.setState({ name: "", email: "", address: "", dob: "", password: "" });
-    this.props.history.push("/");
+    this.props.history.push("/dashboard");
   };
   render() {
     return (
@@ -112,7 +112,7 @@ class AddContact extends React.Component {
                   type="submit"
                   style={{ width: "100%" }}
                 >
-                  Update
+                  Submit
                 </Button>
               </Form>
             </Card.Body>

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Button, Form, FormControl, Row, Col, Table } from "react-bootstrap";
 
 const ContactList = (props) => {
@@ -45,10 +45,17 @@ const ContactList = (props) => {
       </tbody>
     );
   });
-
+  const logoutHandler = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
   const getSearchTerm = () => {
     props.searchKeyword(inputElement.current.value);
   };
+
+  if (localStorage.getItem("useremail") == null) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div style={{ marginTop: "5%" }}>
@@ -69,9 +76,7 @@ const ContactList = (props) => {
           </Form>
         </Col>
         <Col>
-          <Link to="/add" style={{ float: "right" }}>
-            <Button>Add Contact</Button>
-          </Link>
+          <Button onClick={logoutHandler}>Logout</Button>
         </Col>
       </Row>
       <div className="ui celled list">

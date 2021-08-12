@@ -85,9 +85,9 @@ function App() {
       <Router>
         <Header />
         <Switch>
+          <Route exact path="/" render={(props) => <LoginPage {...props} />} />
           <Route
-            path="/"
-            exact
+            path="/dashboard"
             render={(props) => (
               <ContactList
                 {...props}
@@ -113,7 +113,6 @@ function App() {
               />
             )}
           />
-          <Route path="/login" render={(props) => <LoginPage {...props} />} />
           <Route path="/contact/:id" component={ContactDetail} />
         </Switch>
       </Router>

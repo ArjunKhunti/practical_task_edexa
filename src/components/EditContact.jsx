@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Card, Container, Form } from "react-bootstrap";
+import { Redirect } from "react-router-dom";
 
 class EditContact extends React.Component {
   constructor(props) {
@@ -30,10 +31,14 @@ class EditContact extends React.Component {
     }
     this.props.updateContactHandler(this.state);
     this.setState({ name: "", email: "", address: "", dob: "", password: "" });
-    this.props.history.push("/");
+    this.props.history.push("/dashboard");
   };
 
   render() {
+    if (localStorage.getItem("useremail") == null) {
+      return <Redirect to="/" />;
+    }
+
     return (
       <div>
         <Container fluid="md" className="mt-5">

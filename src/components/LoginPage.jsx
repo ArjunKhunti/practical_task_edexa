@@ -1,7 +1,10 @@
-import React from "react";
+import React, { Suspense } from "react";
+import { Link, Redirect } from "react-router-dom";
 import { Form, Button, Card, Container } from "react-bootstrap";
 
+
 class LoginPage extends React.Component {
+  loggedIn = false;
   state = {
     name: "",
     email: "",
@@ -9,15 +12,28 @@ class LoginPage extends React.Component {
     password: "",
     dob: "",
   };
+  data = "";
 
   handleLogin = (event) => {
     event.preventDefault();
     if (this.state.email === "" || this.state.password === "") {
       alert("All fields are mandatory!");
+    } else {
+      this.setState({
+        loggedIn: true,
+      });
+      localStorage.setItem("useremail", this.state.email);
     }
   };
 
   render() {
+    if (this.state.loggedIn) {
+      return (
+        <Suspense fallback={<div>Please wait ...</div>}>
+          <Redirect to="/dashboard" />
+        </Suspense>
+      );
+    }
     return (
       <div>
         <Container fluid="md" className="mt-5">
@@ -50,16 +66,29 @@ class LoginPage extends React.Component {
                     }
                   />
                 </Form.Group>
-                <Button
-                  variant="primary"
-                  type="submit"
-                  style={{ width: "100%" }}
-                >
-                  Submit
-                </Button>
+                <center>
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    style={{ width: "50%" }}
+                  >
+                    Submit
+                  </Button>
+                </center>
               </Form>
             </Card.Body>
           </Card>
+          <center>
+            <Link to={{ pathname: `/add` }}>
+              <Button
+                variant="primary"
+                type="submit"
+                style={{ marginTop: "10%", width: "50%" }}
+              >
+                New User? Sign-up here
+              </Button>
+            </Link>
+          </center>
         </Container>
       </div>
     );
