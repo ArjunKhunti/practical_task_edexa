@@ -1,0 +1,28 @@
+{
+  "contacts": [
+    {
+      "id": "6a9c9cfb-52de-4c76-9d4e-2018a2bee27f",
+      "name": "Arjun",
+      "email": "arjun@gmail.com",
+      "address": "National Highway, green city, rajkot.",
+      "dob": "2021-08-22",
+      "password": "12345678"
+    },
+    {
+      "id": "22e354da-a969-4021-bb13-67568b5246b9",
+      "name": "Mohini",
+      "email": "mohini@gmail.com",
+      "address": "sadadas",
+      "dob": "2021-08-02",
+      "password": "asdasds"
+    },
+    {
+      "id": "5f15f499-59b9-489b-961e-bde61b08069f",
+      "name": "ArjunKhunti",
+      "email": "test@gmail.com",
+      "address": "Moti Colony, Bhavnagar",
+      "password": "123124121",
+      "dob": "2021-08-11"
+    }
+  ]
+}
