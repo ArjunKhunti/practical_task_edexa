@@ -1,21 +1,37 @@
 # Practical Task Edexa
 
-This is a practical exam task for Edexa, which contains functionality such as Login, Registration, Session managment, Dashboard, user details, etc.
+This project built for practical exam task for Edexa. This project having basic form functionality and such as Login, Registration, Session managment, Dashboard, user details, etc.
 
 ## How to run?
 
 To run this project in your local environment, follow the below steps:
 
-### `npm i`
+### To run the JSON server:
 
-By running the above command will install all the dependencies which required to run this project. `npm` will use [package.json](https://github.com/ArjunKhunti/practical_task_edexa/blob/ARJUNKHUNTI_edexa/package.json) file to install dependencies. To Install server dependencies, kindly run the same command in separate command prompt tab.
+- `cd server-api `
+- `npm i`
+- `npm start`
+
+
+### To run the website
+
+ - Navigate to root directory of the project
+ - `npm i`
+ - `npm start`
+
+
+## Command Descriptions
+
+### `npm i`
+By running the above command will install all the dependencies which required to run this project. `npm` will use [package.json](https://github.com/ArjunKhunti/practical_task_edexa/blob/ARJUNKHUNTI_edexa/package.json) file for react app and [server-api/package.json](https://github.com/ArjunKhunti/practical_task_edexa/blob/ARJUNKHUNTI_edexa/server-api/package.json) for server to install dependencies.
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-Also, run `npm start` in separate command prompt tab to start the server. This server will use [http://localhost:3006](http://localhost:3006) location to store/retrive the data. Make sure that other services are not using the same port.
+> Note: JSON server used by this project using [http://localhost:3006](http://localhost:3006) location to store/retrive the data. Make sure that other services are not using the same port.
+
+
+Happy Coding ;)
