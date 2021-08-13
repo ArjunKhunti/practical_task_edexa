@@ -4,7 +4,7 @@ import user from "../images/user.jpg";
 import { Button, Card, ListGroup } from "react-bootstrap";
 
 const ContactDetail = (props) => {
-  const { name, email, dob, address } = props.location.state.contact;
+  const { name, email, dob, address, profilephoto } = props.location.state.contact;
   if (localStorage.getItem("useremail") == null) {
     return <Redirect to="/" />;
   }
@@ -12,7 +12,7 @@ const ContactDetail = (props) => {
     <div>
       <center>
         <Card style={{ width: "18rem", textAlign: "center" }}>
-          <Card.Img variant="top" src={user} alt="user" />
+          <Card.Img variant="top" src={profilephoto} alt="user" />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Text>
